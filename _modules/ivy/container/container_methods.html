@@ -9502,6 +9502,220 @@
     <span class="k">pass</span></div>
 
 
+<div class="viewcode-block" id="static_deg2rad"><a class="viewcode-back" href="../../../functional/ivy/elementwise/deg2rad/static_deg2rad_container.html#ivy.container.container_methods.static_deg2rad">[docs]</a><span class="k">def</span> <span class="nf">static_deg2rad</span><span class="p">(</span>
+    <span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
+    <span class="o">/</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">prune_unapplied</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">map_sequences</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ivy.Container static method variant of ivy.deg2rad.</span>
+<span class="sd">    This method simply wraps the function, and so the docstring for</span>
+<span class="sd">    ivy.deg2rad also applies to this method with minimal changes.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x</span>
+<span class="sd">        input container. to be converted from degrees to radians.</span>
+<span class="sd">    key_chains</span>
+<span class="sd">        The key-chains to apply or not apply the method to. Default is None.</span>
+<span class="sd">    to_apply</span>
+<span class="sd">        If True, the method will be applied to key_chains, otherwise key_chains</span>
+<span class="sd">        will be skipped. Default is True.</span>
+<span class="sd">    prune_unapplied</span>
+<span class="sd">        Whether to prune key_chains for which the function was not applied.</span>
+<span class="sd">        Default is False.</span>
+<span class="sd">    map_sequences</span>
+<span class="sd">        Whether to also map method to sequences (lists, tuples). Default is False.</span>
+<span class="sd">    out</span>
+<span class="sd">        optional output container, for writing the result to. It must have a shape</span>
+<span class="sd">        that the inputs broadcast to.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        a container with each element in ``x`` converted from degrees to radians.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; x=ivy.Container(a=ivy.array([0,90,180,270,360]),\</span>
+<span class="sd">        b=ivy.native_array([0,-1.5,-50,ivy.nan]))</span>
+<span class="sd">    &gt;&gt;&gt; y=ivy.Container.static_deg2rad(x)</span>
+<span class="sd">    &gt;&gt;&gt; print(y)</span>
+<span class="sd">    {</span>
+<span class="sd">        a: ivy.array([0., 1.57, 3.14, 4.71, 6.28]),</span>
+<span class="sd">        b: ivy.array([0., -0.0262, -0.873, nan])</span>
+<span class="sd">    }</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="deg2rad"><a class="viewcode-back" href="../../../functional/ivy/elementwise/deg2rad/deg2rad_container.html#ivy.container.container_methods.deg2rad">[docs]</a><span class="k">def</span> <span class="nf">deg2rad</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">prune_unapplied</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">map_sequences</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ivy.Container instance method variant of ivy.deg2rad.</span>
+<span class="sd">    This method simply wraps the function, and so the docstring for</span>
+<span class="sd">    ivy.deg2rad also applies to this method with minimal changes.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    self</span>
+<span class="sd">        input container. to be converted from degrees to radians.</span>
+<span class="sd">    key_chains</span>
+<span class="sd">        The key-chains to apply or not apply the method to. Default is None.</span>
+<span class="sd">    to_apply</span>
+<span class="sd">        If True, the method will be applied to key_chains, otherwise key_chains</span>
+<span class="sd">        will be skipped. Default is True.</span>
+<span class="sd">    prune_unapplied</span>
+<span class="sd">        Whether to prune key_chains for which the function was not applied.</span>
+<span class="sd">        Default is False.</span>
+<span class="sd">    map_sequences</span>
+<span class="sd">        Whether to also map method to sequences (lists, tuples). Default is False.</span>
+<span class="sd">    out</span>
+<span class="sd">        optional output container, for writing the result to. It must have a shape</span>
+<span class="sd">        that the inputs broadcast to.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        a container with each element in ``x`` converted from degrees to radians.</span>
+<span class="sd">    </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    With :code:`ivy.Container` input:</span>
+
+<span class="sd">    &gt;&gt;&gt; x=ivy.Container(a=ivy.array([0., 0.351, -0.881, ivy.nan]),\</span>
+<span class="sd">        b=ivy.native_array([0,-1.5,-50,ivy.nan]))</span>
+<span class="sd">    &gt;&gt;&gt; y=x.deg2rad()</span>
+<span class="sd">    &gt;&gt;&gt; print(y)</span>
+<span class="sd">    {</span>
+<span class="sd">        a: ivy.array([0., 0.00613, -0.0154, nan]),</span>
+<span class="sd">        b: ivy.array([0., -0.0262, -0.873, nan])</span>
+<span class="sd">    }</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="static_rad2deg"><a class="viewcode-back" href="../../../functional/ivy/elementwise/rad2deg/static_rad2deg_container.html#ivy.container.container_methods.static_rad2deg">[docs]</a><span class="k">def</span> <span class="nf">static_rad2deg</span><span class="p">(</span>
+    <span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
+    <span class="o">/</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">prune_unapplied</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">map_sequences</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ivy.Container static method variant of ivy.rad2deg.</span>
+<span class="sd">    This method simply wraps the function, and so the docstring for</span>
+<span class="sd">    ivy.rad2deg also applies to this method with minimal changes.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x</span>
+<span class="sd">        input container. to be converted from radians to degrees.</span>
+<span class="sd">    key_chains</span>
+<span class="sd">        The key-chains to apply or not apply the method to. Default is None.</span>
+<span class="sd">    to_apply</span>
+<span class="sd">        If True, the method will be applied to key_chains, otherwise key_chains</span>
+<span class="sd">        will be skipped. Default is True.</span>
+<span class="sd">    prune_unapplied</span>
+<span class="sd">        Whether to prune key_chains for which the function was not applied.</span>
+<span class="sd">        Default is False.</span>
+<span class="sd">    map_sequences</span>
+<span class="sd">        Whether to also map method to sequences (lists, tuples). Default is False.</span>
+<span class="sd">    out</span>
+<span class="sd">        optional output container, for writing the result to. It must have a shape</span>
+<span class="sd">        that the inputs broadcast to.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        a container with each element in ``x`` converted from radians to degrees.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; x=ivy.Container(a=ivy.array([0,90,180,270,360]),\</span>
+<span class="sd">        b=ivy.native_array([0,-1.5,-50,ivy.nan]))</span>
+<span class="sd">    &gt;&gt;&gt; y=ivy.Container.static_rad2deg(x)</span>
+<span class="sd">    &gt;&gt;&gt; print(y)</span>
+<span class="sd">    {</span>
+<span class="sd">        a: ivy.array([0., 5160., 10300., 15500., 20600.]),</span>
+<span class="sd">        b: ivy.array([0., -85.9, -2860., nan])</span>
+<span class="sd">    }</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="rad2deg"><a class="viewcode-back" href="../../../functional/ivy/elementwise/rad2deg/rad2deg_container.html#ivy.container.container_methods.rad2deg">[docs]</a><span class="k">def</span> <span class="nf">rad2deg</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">prune_unapplied</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">map_sequences</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ivy.Container instance method variant of ivy.rad2deg.</span>
+<span class="sd">    This method simply wraps the function, and so the docstring for</span>
+<span class="sd">    ivy.rad2deg also applies to this method with minimal changes.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    self</span>
+<span class="sd">        input container. to be converted from radians to degrees.</span>
+<span class="sd">    key_chains</span>
+<span class="sd">        The key-chains to apply or not apply the method to. Default is None.</span>
+<span class="sd">    to_apply</span>
+<span class="sd">        If True, the method will be applied to key_chains, otherwise key_chains</span>
+<span class="sd">        will be skipped. Default is True.</span>
+<span class="sd">    prune_unapplied</span>
+<span class="sd">        Whether to prune key_chains for which the function was not applied.</span>
+<span class="sd">        Default is False.</span>
+<span class="sd">    map_sequences</span>
+<span class="sd">        Whether to also map method to sequences (lists, tuples). Default is False.</span>
+<span class="sd">    out</span>
+<span class="sd">        optional output container, for writing the result to. It must have a shape</span>
+<span class="sd">        that the inputs broadcast to.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        a container with each element in ``x`` converted from radians to degrees.</span>
+<span class="sd">    </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    With :code:`ivy.Container` input:</span>
+
+<span class="sd">    &gt;&gt;&gt; x=ivy.Container(a=ivy.array([0., 0.351, -0.881, ivy.nan]),\</span>
+<span class="sd">        b=ivy.native_array([0,-1.5,-50,7.2]))</span>
+<span class="sd">    &gt;&gt;&gt; y=x.rad2deg()</span>
+<span class="sd">    &gt;&gt;&gt; print(y)</span>
+<span class="sd">    {</span>
+<span class="sd">        a: ivy.array([0., 20.1, -50.5, nan]),</span>
+<span class="sd">        b: ivy.array([0., -85.9, -2860., 413.])</span>
+<span class="sd">    }</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
 <span class="c1">#ivy.container.general</span>
 <span class="c1"># global</span>
 <span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
@@ -9978,7 +10192,7 @@
 
 <span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 2.]), \</span>
 <span class="sd">                          b=ivy.array([3., 4., 5.]))</span>
-<span class="sd">    &gt;&gt;&gt; y = x.clip_vector_norm(2.0, 1.0)</span>
+<span class="sd">    &gt;&gt;&gt; y = x.clip_vector_norm(2.0, p=1.0)</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    {</span>
 <span class="sd">        a: ivy.array([0., 0.667, 1.33]),</span>
@@ -11892,7 +12106,7 @@
 <span class="sd">        c: -1</span>
 <span class="sd">    }</span>
 
-<span class="sd">    </span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span></div>
 
@@ -12455,7 +12669,7 @@
 
 <span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[0., 1., 2.]]), \</span>
 <span class="sd">                          b=ivy.array([[3., 4., 5.]]))</span>
-<span class="sd">    &gt;&gt;&gt; y = x.clip_matrix_norm(2.0, 1.0)</span>
+<span class="sd">    &gt;&gt;&gt; y = x.clip_matrix_norm(2.0, p=1.0)</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    {</span>
 <span class="sd">        a: ivy.array([[0., 1., 2.]]),</span>
@@ -15233,7 +15447,7 @@
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    ivy.Container static method variant of ivy.trace.</span>
-<span class="sd">    This method Returns the sum along the specified diagonals of a matrix (or a </span>
+<span class="sd">    This method Returns the sum along the specified diagonals of a matrix (or a</span>
 <span class="sd">    stack of matrices).</span>
 
 <span class="sd">    Parameters</span>
@@ -15242,7 +15456,7 @@
 <span class="sd">        input container having shape ``(..., M, N)`` and whose innermost two</span>
 <span class="sd">        dimensions form ``MxN`` matrices. Should have a floating-point data type.</span>
 <span class="sd">    offset</span>
-<span class="sd">        Offset of the diagonal from the main diagonal. Can be both positive and </span>
+<span class="sd">        Offset of the diagonal from the main diagonal. Can be both positive and</span>
 <span class="sd">        negative. Defaults to 0.</span>
 <span class="sd">    key_chains</span>
 <span class="sd">        The key-chains to apply or not apply the method to. Default is None.</span>
@@ -15261,9 +15475,9 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    ret</span>
-<span class="sd">        a container containing the traces and whose shape is determined by removing </span>
-<span class="sd">        the last two dimensions and storing the traces in the last array dimension. </span>
-<span class="sd">        For example, if ``x`` has rank ``k`` and shape ``(I, J, K, ..., L, M, N)``, </span>
+<span class="sd">        a container containing the traces and whose shape is determined by removing</span>
+<span class="sd">        the last two dimensions and storing the traces in the last array dimension.</span>
+<span class="sd">        For example, if ``x`` has rank ``k`` and shape ``(I, J, K, ..., L, M, N)``,</span>
 <span class="sd">        then an output array has rank ``k-2`` and shape ``(I, J, K, ..., L)`` where</span>
 
 <span class="sd">        ::</span>
@@ -15305,7 +15519,7 @@
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    ivy.Container instance method variant of ivy.trace.</span>
-<span class="sd">    This method Returns the sum along the specified diagonals of a matrix (or a </span>
+<span class="sd">    This method Returns the sum along the specified diagonals of a matrix (or a</span>
 <span class="sd">    stack of matrices).</span>
 
 <span class="sd">    Parameters</span>
@@ -15314,7 +15528,7 @@
 <span class="sd">        input container having shape ``(..., M, N)`` and whose innermost two</span>
 <span class="sd">        dimensions form ``MxN`` matrices. Should have a floating-point data type.</span>
 <span class="sd">    offset</span>
-<span class="sd">        Offset of the diagonal from the main diagonal. Can be both positive and </span>
+<span class="sd">        Offset of the diagonal from the main diagonal. Can be both positive and</span>
 <span class="sd">        negative. Defaults to 0.</span>
 <span class="sd">    key_chains</span>
 <span class="sd">        The key-chains to apply or not apply the method to. Default is None.</span>
@@ -15333,9 +15547,9 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    ret</span>
-<span class="sd">        a container containing the traces and whose shape is determined by removing </span>
-<span class="sd">        the last two dimensions and storing the traces in the last array dimension. </span>
-<span class="sd">        For example, if ``x`` has rank ``k`` and shape ``(I, J, K, ..., L, M, N)``, </span>
+<span class="sd">        a container containing the traces and whose shape is determined by removing</span>
+<span class="sd">        the last two dimensions and storing the traces in the last array dimension.</span>
+<span class="sd">        For example, if ``x`` has rank ``k`` and shape ``(I, J, K, ..., L, M, N)``,</span>
 <span class="sd">        then an output array has rank ``k-2`` and shape ``(I, J, K, ..., L)`` where</span>
 
 <span class="sd">        ::</span>
@@ -19074,8 +19288,7 @@
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    {</span>
 <span class="sd">        a: ivy.array([2, 0, 1]),</span>
-<span class="sd">        b: ivy.array([[1, 0],\</span>
-<span class="sd">                        [0,1]])</span>
+<span class="sd">        b: ivy.array([[1, 0],[0,1]])</span>
 <span class="sd">    }</span>
 <span class="sd">    </span>
 <span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.native_array([2, 5, 1]),\</span>
@@ -19084,8 +19297,7 @@
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    {</span>
 <span class="sd">        a: ivy.array([2, 0, 1]),</span>
-<span class="sd">        b: ivy.array([[1, 0],\</span>
-<span class="sd">                        [0,1]])</span>
+<span class="sd">        b: ivy.array([[1, 0],[0,1]])</span>
 <span class="sd">    }</span>
 <span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -19239,14 +19451,14 @@
 <span class="sd">        b: ivy.array([1, 8])</span>
 <span class="sd">    }</span>
 
-<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([5, 9, 0.2]), \</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([5, 9, 0.2]),\</span>
 <span class="sd">                          b=ivy.array([[8, 1], [5, 0.8]]))</span>
 <span class="sd">    &gt;&gt;&gt; y = x.sort()</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
-<span class="sd">    { a: ivy.array([0.2, 5., 9.]), \</span>
-<span class="sd">      b: ivy.array([[1., 8.],[0.8, 5.]])</span>
+<span class="sd">    {</span>
+<span class="sd">        a: ivy.array([0.2, 5., 9.]),</span>
+<span class="sd">        b: ivy.array([[1., 8.], [0.8, 5.]])</span>
 <span class="sd">    }</span>
-
 
 <span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([8, 0.5, 6]),\</span>
 <span class="sd">                          b=ivy.array([[9, 0.7], [0.4, 0]]))</span>
@@ -19254,8 +19466,7 @@
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    {</span>
 <span class="sd">        a: ivy.array([0.5, 6., 8.]),</span>
-<span class="sd">        b: ivy.array([[0.7, 9.],\</span>
-<span class="sd">                        [0., 0.4]])</span>
+<span class="sd">        b: ivy.array([[0.7, 9.],[0., 0.4]])</span>
 <span class="sd">    }</span>
 
 <span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.native_array([8, 0.5, 6]),\</span>
@@ -19264,8 +19475,7 @@
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
 <span class="sd">    {</span>
 <span class="sd">        a: ivy.array([0.5, 6., 8.]),</span>
-<span class="sd">        b: ivy.array([[0.7, 9.],</span>
-<span class="sd">              [0., 0.4]])</span>
+<span class="sd">        b: ivy.array([[0.7, 9.],[0., 0.4]])</span>
 <span class="sd">    }</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
